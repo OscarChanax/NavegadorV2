@@ -23,19 +23,25 @@ namespace NavegadorV2
             webBrowser1.Visible = true;
             dataGridView1.Visible = false;
         }
-
         private void homeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             webBrowser1.GoHome();
         }
-
-        
-
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-       
+        private void haciaDelanteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            webBrowser1.GoForward();
+        }
+
+        private void haciaAtrásToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            webBrowser1.GoBack();
+        }
+
+
 
         private void Leer(string fileName)
         {
@@ -124,19 +130,6 @@ namespace NavegadorV2
             }
             writer.Close();
         }
-
-        
-
-        private void haciaDelanteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            webBrowser1.GoForward();
-        }
-
-        private void haciaAtrásToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            webBrowser1.GoBack();
-        }
-
         private void historialToolStripMenuItem_Click(object sender, EventArgs e)
         {
             webBrowser1.Visible = false;

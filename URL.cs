@@ -8,5 +8,6 @@ namespace NavegadorV2
 {
     internal class URL
     {
+
     }
 }

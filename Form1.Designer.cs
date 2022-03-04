@@ -37,7 +37,12 @@
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comboBoxurl = new System.Windows.Forms.ComboBox();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.historialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fechaDeVisitaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.másVisitadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -56,7 +61,8 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.navegarToolStripMenuItem});
+            this.navegarToolStripMenuItem,
+            this.historialToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(808, 24);
@@ -73,32 +79,33 @@
             this.navegarToolStripMenuItem.Name = "navegarToolStripMenuItem";
             this.navegarToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
             this.navegarToolStripMenuItem.Text = "Navegar";
+            this.navegarToolStripMenuItem.Click += new System.EventHandler(this.navegarToolStripMenuItem_Click);
             // 
             // homeToolStripMenuItem
             // 
             this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
-            this.homeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.homeToolStripMenuItem.Text = "Home";
             this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
             // 
             // haciaAtrásToolStripMenuItem
             // 
             this.haciaAtrásToolStripMenuItem.Name = "haciaAtrásToolStripMenuItem";
-            this.haciaAtrásToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.haciaAtrásToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.haciaAtrásToolStripMenuItem.Text = "Hacia atrás";
             this.haciaAtrásToolStripMenuItem.Click += new System.EventHandler(this.haciaAtrásToolStripMenuItem_Click);
             // 
             // haciaDelanteToolStripMenuItem
             // 
             this.haciaDelanteToolStripMenuItem.Name = "haciaDelanteToolStripMenuItem";
-            this.haciaDelanteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.haciaDelanteToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.haciaDelanteToolStripMenuItem.Text = "Hacia delante";
             this.haciaDelanteToolStripMenuItem.Click += new System.EventHandler(this.haciaDelanteToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -118,11 +125,44 @@
             this.webBrowser1.Size = new System.Drawing.Size(774, 376);
             this.webBrowser1.TabIndex = 4;
             // 
+            // historialToolStripMenuItem
+            // 
+            this.historialToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fechaDeVisitaToolStripMenuItem,
+            this.másVisitadoToolStripMenuItem});
+            this.historialToolStripMenuItem.Name = "historialToolStripMenuItem";
+            this.historialToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
+            this.historialToolStripMenuItem.Text = "Historial";
+            this.historialToolStripMenuItem.Click += new System.EventHandler(this.historialToolStripMenuItem_Click);
+            // 
+            // fechaDeVisitaToolStripMenuItem
+            // 
+            this.fechaDeVisitaToolStripMenuItem.Name = "fechaDeVisitaToolStripMenuItem";
+            this.fechaDeVisitaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.fechaDeVisitaToolStripMenuItem.Text = "Fecha de visita";
+            this.fechaDeVisitaToolStripMenuItem.Click += new System.EventHandler(this.fechaDeVisitaToolStripMenuItem_Click);
+            // 
+            // másVisitadoToolStripMenuItem
+            // 
+            this.másVisitadoToolStripMenuItem.Name = "másVisitadoToolStripMenuItem";
+            this.másVisitadoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.másVisitadoToolStripMenuItem.Text = "Más visitado";
+            this.másVisitadoToolStripMenuItem.Click += new System.EventHandler(this.másVisitadoToolStripMenuItem_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 63);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(774, 238);
+            this.dataGridView1.TabIndex = 5;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(808, 450);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.comboBoxurl);
             this.Controls.Add(this.button1);
@@ -133,6 +173,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -149,6 +190,10 @@
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ComboBox comboBoxurl;
         private System.Windows.Forms.WebBrowser webBrowser1;
+        private System.Windows.Forms.ToolStripMenuItem historialToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fechaDeVisitaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem másVisitadoToolStripMenuItem;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 

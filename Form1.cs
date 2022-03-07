@@ -19,14 +19,18 @@ namespace NavegadorV2
         {
             InitializeComponent();
         }
-        
-        private void homeToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            labelfecha.Visible = false;
-            labelvisitado.Visible = false;
-            webBrowser1.GoHome();
-            dataGridView1.Visible = false;
-            webBrowser1.Visible = true;
+
+        }
+        private void labelfecha_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void historialToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -41,6 +45,16 @@ namespace NavegadorV2
         {
             webBrowser1.GoBack();
         }
+
+        private void homeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            labelfecha.Visible = false;
+            labelvisitado.Visible = false;
+            webBrowser1.GoHome();
+            dataGridView1.Visible = false;
+            webBrowser1.Visible = true;
+        }
+       
         private void navegarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //VISIBILIDAD DE RECURSOS
@@ -58,29 +72,9 @@ namespace NavegadorV2
             dataGridView1.Visible = false;
 
             webBrowser1.GoHome();
-            Leer("Historial.txt");
+            Leer("Historial.txt");    //LECTURA DE LOS DATOS DEL DOCUMENTO DE TEXTO AL INICIAL EL PROGRAMA       
         }
-        private void Leer(string fileName)
-        {
-            FileStream stream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
-            StreamReader reader = new StreamReader(stream);
-            while (reader.Peek() > -1)
-            {
-                URL dato = new URL();
-                dato.texto = reader.ReadLine();
-                dato.numero = int.Parse(reader.ReadLine());
-                dato.fecha = Convert.ToDateTime(reader.ReadLine());
-
-                urls.Add(dato);
-            }
-            reader.Close();
-        }
-
-        private void historialToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
+       
         private void fechaDeVisitaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //VISIBILIDAD DE RECURSOS
@@ -110,8 +104,6 @@ namespace NavegadorV2
 
             
         }
-
-
         private void button1_Click(object sender, EventArgs e)
         {
             string uri = "";
@@ -180,6 +172,21 @@ namespace NavegadorV2
             }
             writer.Close();
         }
+        private void Leer(string fileName)
+        {
+            FileStream stream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+            StreamReader reader = new StreamReader(stream);
+            while (reader.Peek() > -1)
+            {
+                URL dato = new URL();
+                dato.texto = reader.ReadLine();
+                dato.numero = int.Parse(reader.ReadLine());
+                dato.fecha = Convert.ToDateTime(reader.ReadLine());
+
+                urls.Add(dato);
+            }
+            reader.Close();
+        }
 
         private void Mostrar()
         {
@@ -188,16 +195,6 @@ namespace NavegadorV2
 
             dataGridView1.DataSource = urls;
             dataGridView1.Refresh();
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void labelfecha_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

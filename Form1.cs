@@ -13,6 +13,7 @@ namespace NavegadorV2
 {
     public partial class Form1 : Form
     {
+        
         List<URL> urls = new List<URL>();
         public Form1()
         {
@@ -43,6 +44,7 @@ namespace NavegadorV2
         private void navegarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //VISIBILIDAD DE RECURSOS
+            button1.Visible = true;
             comboBoxurl.Visible = true;
             labelfecha.Visible = false;
             labelvisitado.Visible = false;
@@ -63,9 +65,13 @@ namespace NavegadorV2
             FileStream stream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
             StreamReader reader = new StreamReader(stream);
             while (reader.Peek() > -1)
-
             {
-                comboBoxurl.Items.Add(reader.ReadLine());
+                URL dato = new URL();
+                dato.texto = reader.ReadLine();
+                dato.numero = int.Parse(reader.ReadLine());
+                dato.fecha = Convert.ToDateTime(reader.ReadLine());
+
+                urls.Add(dato);
             }
             reader.Close();
         }
@@ -77,6 +83,8 @@ namespace NavegadorV2
 
         private void fechaDeVisitaToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //VISIBILIDAD DE RECURSOS
+            button1.Visible = false;
             comboBoxurl.Visible = false;
             labelfecha.Visible = true;
             labelvisitado.Visible = false;
@@ -89,6 +97,8 @@ namespace NavegadorV2
 
         private void másVisitadoToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //VISIBILIDAD DE RECURSOS
+            button1.Visible = false;
             comboBoxurl.Visible = false;
             labelfecha.Visible = false;
             labelvisitado.Visible = true;
@@ -130,11 +140,10 @@ namespace NavegadorV2
             //SINO LO ENCUENTRA DEVUELVE -1
             if (posicion == -1)
             {
-
                 URL dato = new URL();
-                dato.texto = comboBoxurl.Text;
-                dato.numero = 1;
-                dato.fecha = DateTime.Now;//DateTimenow
+                dato.texto = comboBoxurl.Text;//SI DESEO ALMACENAR LA DIRECCIÓN CAMBIAR POR "uri"
+                dato.numero = 1; //ALMACENA DATO DEL NUMERO DE INGRESO TEMPORALMENTE
+                dato.fecha = DateTime.Now;//DateTimenow ALMACENA DATOS DE FECHA Y HORA TEMPORALMENTE
 
                 urls.Add(dato);
             }
@@ -144,27 +153,31 @@ namespace NavegadorV2
                 urls[posicion].numero++;
                 urls[posicion].fecha = DateTime.Now;
             }
+
+            int Listo = 0;
+            for (int i = 0; i< comboBoxurl.Items.Count; i++) 
+            {
+                if (uri == comboBoxurl.Items[i].ToString())
+                    Listo++;
+            }
+            if (Listo==0)
+            {
+                comboBoxurl.Items.Add(uri);
+                Guardar("Historial.txt");
+            }
+            
         }
-        //int Listo = 0;
-        //    for private object numericUpDown1;
 
-        //(int i = 0; i < comboBoxurl.Items.Count; i++)
-        //    {
-        //        if (uri == comboBoxurl.Items[i].ToString())
-        //            Listo++;
-        //    }
-        //    if (Listo == 0)
-        //    {
-        //        comboBoxurl.Items.Add(uri);
-        //        Guardar("Historial.txt", uri);
-        //    }
-
-        //}
-        private void Guardar(string fileName, string texto)
+        private void Guardar(string fileName)
         {
-            FileStream stream = new FileStream(fileName, FileMode.Append, FileAccess.Write);
-            StreamWriter writer = new StreamWriter(stream);
-            writer.WriteLine(texto);
+            FileStream stream = new FileStream(fileName, FileMode.OpenOrCreate, FileAccess.Write); //Append adjuntar datos al archivo de texto ||OpenOrCreade abrir archivo si existe si no crear uno y escribir en el
+             StreamWriter writer = new StreamWriter(stream);
+            foreach (var dato in urls)
+            {
+                writer.WriteLine(dato.texto);
+                writer.WriteLine(dato.numero);
+                writer.WriteLine(dato.fecha);
+            }
             writer.Close();
         }
 

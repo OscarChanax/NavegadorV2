@@ -88,28 +88,28 @@
             // homeToolStripMenuItem
             // 
             this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
-            this.homeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.homeToolStripMenuItem.Text = "Home";
             this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
             // 
             // haciaAtrásToolStripMenuItem
             // 
             this.haciaAtrásToolStripMenuItem.Name = "haciaAtrásToolStripMenuItem";
-            this.haciaAtrásToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.haciaAtrásToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.haciaAtrásToolStripMenuItem.Text = "Hacia atrás";
             this.haciaAtrásToolStripMenuItem.Click += new System.EventHandler(this.haciaAtrásToolStripMenuItem_Click);
             // 
             // haciaDelanteToolStripMenuItem
             // 
             this.haciaDelanteToolStripMenuItem.Name = "haciaDelanteToolStripMenuItem";
-            this.haciaDelanteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.haciaDelanteToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.haciaDelanteToolStripMenuItem.Text = "Hacia delante";
             this.haciaDelanteToolStripMenuItem.Click += new System.EventHandler(this.haciaDelanteToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -170,7 +170,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.SteelBlue;
-            this.dataGridView1.Location = new System.Drawing.Point(231, 98);
+            this.dataGridView1.Location = new System.Drawing.Point(100, 98);
             this.dataGridView1.Name = "dataGridView1";
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -178,7 +178,7 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Size = new System.Drawing.Size(456, 238);
+            this.dataGridView1.Size = new System.Drawing.Size(656, 238);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 

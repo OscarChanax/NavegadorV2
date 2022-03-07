@@ -52,11 +52,11 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Chocolate;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button1.Location = new System.Drawing.Point(693, 27);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 23);
+            this.button1.Size = new System.Drawing.Size(103, 30);
             this.button1.TabIndex = 0;
             this.button1.Text = "Búsqueda";
             this.button1.UseVisualStyleBackColor = false;
@@ -140,17 +140,20 @@
             // comboBoxurl
             // 
             this.comboBoxurl.FormattingEnabled = true;
-            this.comboBoxurl.Location = new System.Drawing.Point(12, 29);
+            this.comboBoxurl.Location = new System.Drawing.Point(12, 36);
             this.comboBoxurl.Name = "comboBoxurl";
             this.comboBoxurl.Size = new System.Drawing.Size(675, 21);
             this.comboBoxurl.TabIndex = 3;
             // 
             // webBrowser1
             // 
+            this.webBrowser1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.webBrowser1.Location = new System.Drawing.Point(12, 63);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(774, 376);
+            this.webBrowser1.Size = new System.Drawing.Size(784, 376);
             this.webBrowser1.TabIndex = 4;
             // 
             // dataGridView1
@@ -170,7 +173,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.SteelBlue;
-            this.dataGridView1.Location = new System.Drawing.Point(100, 98);
+            this.dataGridView1.Location = new System.Drawing.Point(219, 98);
             this.dataGridView1.Name = "dataGridView1";
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -178,7 +181,7 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Size = new System.Drawing.Size(656, 238);
+            this.dataGridView1.Size = new System.Drawing.Size(490, 238);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
